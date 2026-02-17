@@ -1,15 +1,140 @@
 <!-- This is just skelton for the real website
      I made sure only to add all the bare essentials needed
-     so we could fill in everything else.
-     
-     If anyone is good with CSS feel free to change the design
-     or layout. -->
-
+     so we could fill in everything else. -->
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>CISC 322 Group Website</title>
+    <style>
+
+        body {
+            background-color: #1a1a2e;
+            color: white;
+        }
+
+        h1, h2, h3, h4 {
+            color: lavender;
+        }
+
+        a {
+            color: lavender;
+            border-color: #4B0082 !important;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        a:hover {
+            color: white;
+            background-color: #4B0082;
+        }
+
+        details {
+            background-color: #1a1a2e;
+            border: 1px solid #4B0082;
+            border-radius: 6px;
+            margin: 8px auto;
+            padding: 8px 16px;
+            max-width: 90%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        details:hover {
+            box-shadow: 0 0 12px lavender;
+        }
+
+        details[open] {
+            box-shadow: 0 0 18px lavender;
+        }
+
+        summary {
+            cursor: pointer;
+            color: lavender;
+            font-weight: bold;
+            padding: 6px 0;
+            transition: color 0.3s ease;
+        }
+
+        summary:hover {
+            color: white;
+        }
+
+        iframe {
+            border: 1px solid #4B0082 !important;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        ul, p {
+            color: lavender;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glowPulse {
+            0%   { text-shadow: 0 0 8px #4B0082; }
+            50%  { text-shadow: 0 0 24px lavender, 0 0 40px #4B0082; }
+            100% { text-shadow: 0 0 8px #4B0082; }
+        }
+
+        h1 {
+            animation: fadeInDown 0.8s ease both, glowPulse 4s ease-in-out infinite;
+        }
+
+        h2 {
+            animation: fadeInDown 0.7s ease both;
+        }
+
+        #current-date {
+            animation: fadeIn 1.2s ease both;
+            color: lavender;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #4B0082;
+            margin: 5px;
+            text-decoration: none;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .nav-btn:nth-child(1) { animation-delay: 0.1s; }
+        .nav-btn:nth-child(2) { animation-delay: 0.2s; }
+        .nav-btn:nth-child(3) { animation-delay: 0.3s; }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, lavender, transparent);
+            background-size: 200% 100%;
+            animation: hrSweep 3s linear infinite;
+        }
+
+        @keyframes hrSweep {
+            0%   { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .section-heading {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -18,119 +143,142 @@
 
 <p id="current-date" style="text-align:center;"></p>
 
-<h3 style="text-align:center;"><strong>Group Name :</strong> Group 25</h3>
-
-<!-- Add your emails and SID-->
+<h3 style="text-align:center;"><strong>Group Name:</strong> Group 25</h3>
 
 <details>
     <summary style="text-align:center;"><strong>Group Members (Drop-Down Menu)</strong></summary>
     <ul style="list-style-position:inside; text-align:center; padding:0;">
-        <li>Caravaggio, Emanuel, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddefefbab0a5ef9daca8b8b8b3aea8f3bebc">[email&#160;protected]</a>, Student I.D : 20403106</li>
-        <li>Clulow, Damon, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a79597c3cdc49ee7d6d2c2c2c9d4d289c4c6">[email&#160;protected]</a>, Student I.D : 20285634 </li>
-        <li>Dhungana, Raghab, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f7d7e3d2b7a790f3e3a2a2a213c3a612c2e">[email&#160;protected]</a>, Student I.D : 20354596</li>
-        <li>Elamin, Adam, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6153510000045421101404040f12144f0200">[email&#160;protected]</a>, Student I.D : 20271708 </li>
-        <li>Fernando, Paul, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98aaa8e8feabd8e9edfdfdf6ebedb6fbf9">[email&#160;protected]</a> , Student I.D : 20261647 </li>
-        <li>Shetty, Aditya, email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b494a1a08084a4c3b0a0e1e1e15080e55181a">[email&#160;protected]</a> , Student I.D : 20320373</li>
+        <li>Caravaggio, Emanuel — 22gmx2@queensu.ca — ID: 20403106</li>
+        <li>Clulow, Damon — 20djc9@queensu.ca — ID: 20285634</li>
+        <li>Dhungana, Raghab — 21rd56@queensu.ca — ID: 20354596</li>
+        <li>Elamin, Adam — 20aae5@queensu.ca — ID: 20271708</li>
+        <li>Fernando, Paul — 20pf3@queensu.ca — ID: 20261647</li>
+        <li>Shetty, Aditya — 21ass17@queensu.ca — ID: 20320373</li>
     </ul>
 </details>
-
-<!-- Add the description of the Project when the LLS is decided-->
 
 <details>
     <summary style="text-align:center;"><strong>Description (Drop-Down Menu)</strong></summary>
     <p style="text-align:center">The Gemini CLI is an open-source tool built by Google that lets users interact with the Gemini LLM through prompted user input or the terminal.
-                                 It can execute tasks on a user's local machine, such as reading and writing files, running shell commands, and integrating with external platforms 
-                                 like GitHub and Slack. The goal of this project is to analyze and document how the system is architecturally structured, understanding how its core 
-                                 components collaborate and work together to process user input. By the end of this project It is our hope that we can explain Google's remote AI infrastructure, 
-                                 and how the Gemini CLI processes intelligent responses back to the user.</p>
+        It can execute tasks on a user's local machine, such as reading and writing files, running shell commands, and integrating with external platforms
+        like GitHub and Slack. The goal of this project is to analyze and document how the system is architecturally structured, understanding how its core
+        components collaborate and work together to process user input. By the end of this project it is our hope that we can explain Google's remote AI infrastructure,
+        and how the Gemini CLI processes intelligent responses back to the user.</p>
 </details>
-
-<!-- Add a picture of the LSS when it is decided -->
 
 <p style="text-align:center;"><strong>Large Software System: Gemini CLI</strong></p>
 
 <hr>
 
-<!-- Anchor Link for A1-A3 -->
-
 <div style="text-align:center;">
-    <a href="#A1" style="display:inline-block; padding:10px 20px; border:1px solid black; margin:5px; text-decoration:none;">A1 – Documentation and Conceptual Architecture</a>
-    <a href="#A2" style="display:inline-block; padding:10px 20px; border:1px solid black; margin:5px; text-decoration:none;">A2 – Concrete vs Conceptual Architecture</a>
-    <a href="#A3" style="display:inline-block; padding:10px 20px; border:1px solid black; margin:5px; text-decoration:none;">A3 – Comparison and Enhancemnt</a>
+    <a href="#A1" class="nav-btn">A1 – Documentation and Conceptual Architecture</a>
+    <a href="#A2" class="nav-btn">A2 – Concrete vs Conceptual Architecture</a>
+    <a href="#A3" class="nav-btn">A3 – Comparison and Enhancement</a>
 </div>
 
 <hr>
-
-<!-- Drop down for A1-A3, we can replace eahc of the subassigments with quicklinks/anchor links to requested link-->
 
 <a id="A1"></a>
-<h2 style="text-align:center;">A1 – Documentation and Conceptual Architecture</h2>
+<h2 class="section-heading" style="text-align:center; animation-delay: 0.1s;">A1 – Documentation and Conceptual Architecture</h2>
 
 <details>
-<summary style="text-align:center;">A1 Tenants</summary>
+    <summary style="text-align:center;">A1 Tenants</summary>
+    <hr>
+    <div style="text-align:center;">
 
-<hr>
+        <details>
+            <summary>Conceptual Architecture Report</summary>
+            <br>
+            <iframe src="A1_Conceptual_Architecture.pdf" width="80%" height="600px">
+                <p>Your browser does not support iframes. <a href="A1_Conceptual_Architecture.pdf">Download the Report PDF</a>.</p>
+            </iframe>
+        </details>
 
-<div style="text-align:center;">
+        <br>
 
-<h4>Conceptual Architecture Report</h4>
-<iframe src="A1_Conceptual_Architecture.pdf" width="80%" height="600px" style="border:1px solid #ccc;">
-    <p>Your browser does not support iframes. <a href="A1_Conceptual_Architecture.pdf">Download the Report PDF</a>.</p>
-</iframe>
+        <details>
+            <summary>Conceptual Architecture Slideshow</summary>
+            <br>
+            <iframe src="A1_Conceptual_Architecture_Presentation.pdf" width="80%" height="600px">
+                <p>Your browser does not support iframes. <a href="A1_Conceptual_Architecture_Presentation.pdf">Download the Slideshow PDF</a>.</p>
+            </iframe>
+        </details>
 
-<h4>Conceptual Architecture Slideshow</h4>
-<iframe src="A1_Conceptual_Architecture_Presentation.pdf" width="80%" height="600px" style="border:1px solid #ccc;">
-    <p>Your browser does not support iframes. <a href="A1_Conceptual_Architecture_Presentation.pdf">Download the Slideshow PDF</a>.</p>
-</iframe>
+        <br>
 
-<h4>Conceptual Architecture Video Presentation</h4>
-<p></p>
+        <details>
+            <summary>Conceptual Architecture Video Presentation</summary>
+            <br>
+            <iframe width="80%" height="500px" src="https://www.youtube.com/embed/bslDLN8hriI"
+                title="Conceptual Architecture Video Presentation" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </details>
 
-</div>
-
+    </div>
 </details>
 
 <hr>
 
 <a id="A2"></a>
-<h2 style="text-align:center;">A2 – Concrete vs Conceptual Architecture</h2>
+<h2 class="section-heading" style="text-align:center; animation-delay: 0.2s;">A2 – Concrete vs Conceptual Architecture</h2>
 
 <details>
-<summary style="text-align:center;">A2 Tenants</summary>
-
-<hr>
-
-<div style="text-align:center;">
-
-<h4>Source Code Overview</h4>
-<p></p>
-
-<h4>Subsystem Decomposition</h4>
-<p></p>
-
-<h4>Component Mapping</h4>
-<p></p>
-
-<h4>Runtime Structure</h4>
-<p></p>
-
-<h4>Technology Stack</h4>
-<p></p>
-
-<h4>Conceptual vs Concrete Comparison</h4>
-<p></p>
-
-<h4>Diagrams</h4>
-<p></p>
-
-<h4>AI Log</h4>
-<p></p>
-
-</div>
-
+    <summary style="text-align:center;">A2 Tenants</summary>
+    <hr>
+    <div style="text-align:center;">
+        <h4>Source Code Overview</h4>
+        <h4>Subsystem Decomposition</h4>
+        <h4>Component Mapping</h4>
+        <h4>Runtime Structure</h4>
+        <h4>Technology Stack</h4>
+        <h4>Conceptual vs Concrete Comparison</h4>
+        <h4>Diagrams</h4>
+        <h4>AI Log</h4>
+    </div>
 </details>
 
 <hr>
 
 <a id="A3"></a>
-<h2 style="text-align:cente
+<h2 class="section-heading" style="text-align:center; animation-delay: 0.3s;">A3 – Comparison and Enhancement</h2>
+
+<details>
+    <summary style="text-align:center;">A3 Tenants</summary>
+    <hr>
+    <div style="text-align:center;">
+        <h4>Identified Issues</h4>
+        <h4>Proposed Enhancement</h4>
+        <h4>Design Option 1</h4>
+        <h4>Design Option 2</h4>
+        <h4>Tradeoff Analysis</h4>
+        <h4>Proposed Implementation Plan</h4>
+        <h4>Final Recommendation</h4>
+        <h4>AI Log</h4>
+    </div>
+</details>
+
+<script>
+    const current = new Date();
+    const date = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("current-date").textContent =
+        "Date: " + current.toLocaleDateString(undefined, date);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('details, h2, h4').forEach(el => {
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
