@@ -266,28 +266,51 @@
 
 <a id="A3"></a>
 <h2 class="section-heading" style="text-align:center; animation-delay: 0.3s;">A3 – Comparison and Enhancement</h2>
-
+ 
 <details>
     <summary style="text-align:center;">A3 Tenants</summary>
     <hr>
     <div style="text-align:center;">
-        <h4>Identified Issues</h4>
-        <h4>Proposed Enhancement</h4>
-        <h4>Design Option 1</h4>
-        <h4>Design Option 2</h4>
-        <h4>Tradeoff Analysis</h4>
-        <h4>Proposed Implementation Plan</h4>
-        <h4>Final Recommendation</h4>
-        <h4>AI Log</h4>
+ 
+        <details>
+            <summary>Architectural Enhancement Report</summary>
+            <br>
+            <iframe src="A3__Architectural_Enhancement.pdf" width="80%" height="600px">
+                <p>Your browser does not support iframes. <a href="A3__Architectural_Enhancement.pdf">Download the Report PDF</a>.</p>
+            </iframe>
+        </details>
+ 
+        <br>
+ 
+        <details>
+            <summary>Architectural Enhancement Slideshow</summary>
+            <br>
+            <iframe src="A3_Presentation.pdf" width="80%" height="600px">
+                <p>Your browser does not support iframes. <a href="A3_Presentation.pdf">Download the Slideshow PDF</a>.</p>
+            </iframe>
+        </details>
+ 
+        <br>
+ 
+        <details>
+            <summary>Architectural Enhancement Video Presentation</summary>
+            <br>
+            <iframe width="80%" height="500px" src="https://www.youtube.com/embed/OuZeUjFKsAE"
+                title="Architectural Enhancement Video Presentation" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </details>
+ 
     </div>
 </details>
-
+ 
 <script>
     const current = new Date();
     const date = { year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById("current-date").textContent =
         "Date: " + current.toLocaleDateString(undefined, date);
-
+ 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -296,13 +319,13 @@
             }
         });
     }, { threshold: 0.1 });
-
+ 
     document.querySelectorAll('details, h2, h4').forEach(el => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 </script>
-
+ 
 </body>
 </html>
 
